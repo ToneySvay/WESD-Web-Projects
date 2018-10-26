@@ -1,0 +1,36 @@
+﻿@page
+@model EarlyLearningHub.Pages.TableMaintenance.ELHub.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Hub[0].ElhName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Hub) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ElhName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ElhId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ElhId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ElhId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

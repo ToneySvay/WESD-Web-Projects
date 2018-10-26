@@ -1,0 +1,25 @@
+﻿@page
+@model EarlyLearningHub.Pages.TableMaintenance.ELHub.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hub</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hub.ElhName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Hub.ElhName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Hub.ElhId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
