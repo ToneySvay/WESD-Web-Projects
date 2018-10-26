@@ -29,7 +29,7 @@ namespace EarlyLearningHub.Pages.TableMaintenance.County
                 return NotFound();
             }
 
-            County = await _context.County.FirstOrDefaultAsync(m => m.CtyId == id);
+            County = await _context.County.FirstOrDefaultAsync(m => m.CoId == id);
 
             if (County == null)
             {
@@ -53,7 +53,7 @@ namespace EarlyLearningHub.Pages.TableMaintenance.County
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CountyExists(County.CtyId))
+                if (!CountyExists(County.CoId))
                 {
                     return NotFound();
                 }
@@ -68,7 +68,7 @@ namespace EarlyLearningHub.Pages.TableMaintenance.County
 
         private bool CountyExists(int id)
         {
-            return _context.County.Any(e => e.CtyId == id);
+            return _context.County.Any(e => e.CoId == id);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace EarlyLearningHub.Pages.TableMaintenance.County
                 return NotFound();
             }
 
-            County = await _context.County.FirstOrDefaultAsync(m => m.CtyId == id);
+            County = await _context.County.FirstOrDefaultAsync(m => m.CoId == id);
 
             if (County == null)
             {

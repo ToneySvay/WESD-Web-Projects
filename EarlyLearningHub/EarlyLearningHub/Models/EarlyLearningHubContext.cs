@@ -47,13 +47,13 @@ namespace EarlyLearningHub.Models
         {
             modelBuilder.Entity<County>(entity =>
             {
-                entity.HasKey(e => e.CtyId);
+                entity.HasKey(e => e.CoId);
 
-                entity.Property(e => e.CtyId).HasColumnName("CTY_ID");
+                entity.Property(e => e.CoId).HasColumnName("CO_ID");
 
-                entity.Property(e => e.CtyName)
+                entity.Property(e => e.CoName)
                     .IsRequired()
-                    .HasColumnName("CTY_Name")
+                    .HasColumnName("CO_Name")
                     .HasMaxLength(100)
                     .IsUnicode(false);
             });

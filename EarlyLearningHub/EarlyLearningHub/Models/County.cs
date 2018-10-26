@@ -5,7 +5,7 @@ namespace EarlyLearningHub.Models
 {
     public partial class County
     {
-        public int CtyId { get; set; }
-        public string CtyName { get; set; }
+        public int CoId { get; set; }
+        public string CoName { get; set; }
     }
 }
