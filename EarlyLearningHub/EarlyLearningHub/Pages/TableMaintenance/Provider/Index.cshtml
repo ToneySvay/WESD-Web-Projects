@@ -14,10 +14,17 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Provider[0].PrvdName)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Provider[0].PrvdName)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Provider[0].PrvdPt)
+                @*@Html.DisplayNameFor(model => model.Provider[0].PrvdPt)*@
+
+                <a asp-page="./Index" asp-route-sortOrder="@Model.TypeSort">
+                    @Html.DisplayNameFor(model => model.Provider[0].PrvdPt.PtName)
+                </a>
+
             </th>
             <th></th>
         </tr>
@@ -27,6 +34,7 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.PrvdName)
+                
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PrvdPt.PtName)
