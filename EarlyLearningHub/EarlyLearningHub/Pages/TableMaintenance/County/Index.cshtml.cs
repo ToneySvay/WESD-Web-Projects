@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using EarlyLearningHub.Models;
 
+
 namespace EarlyLearningHub.Pages.TableMaintenance.County
 {
     public class IndexModel : PageModel
@@ -18,13 +19,32 @@ namespace EarlyLearningHub.Pages.TableMaintenance.County
             _context = context;
         }
 
-        public IList<Models.County> County { get;set; }
+        //public IList<Models.County> County { get;set; }
+        public PaginatedList<Models.County> County { get; set; }
 
-        public async Task OnGetAsync(string sortOrder, string searchString)
+        public async Task OnGetAsync(string sortOrder, string currentFilter, string searchString, int? pageIndex)
         {
+            CurrentSort = sortOrder;
             ////Add Sorting
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            /////
+
+            ////Add Paging
+            if (searchString != null)
+            {
+                pageIndex = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ////
+
+
+
+            /////Add Search
             CurrentFilter = searchString;
+            ////
 
             IQueryable<Models.County> countyIQ = from s in _context.County
                 select s;
@@ -47,7 +67,12 @@ namespace EarlyLearningHub.Pages.TableMaintenance.County
             }
             ////////////////
 
-            County = await countyIQ.AsNoTracking().ToListAsync();//await _context.County.ToListAsync();
+            //County = await countyIQ.AsNoTracking().ToListAsync();//await _context.County.ToListAsync();
+
+            //Added Paging
+            int pageSize = 10;
+            County = await PaginatedList<Models.County>.CreateAsync(
+                countyIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
         }
 
 

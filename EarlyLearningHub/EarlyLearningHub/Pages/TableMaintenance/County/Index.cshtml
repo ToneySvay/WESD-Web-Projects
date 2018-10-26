@@ -27,7 +27,11 @@
         <tr>
             <th>
                 @*@Html.DisplayNameFor(model => model.County[0].CoName)*@
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                @*<a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                        @Html.DisplayNameFor(model => model.County[0].CoName)
+                    </a>*@
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
+                   asp-route-currentFilter="@Model.CurrentFilter">
                     @Html.DisplayNameFor(model => model.County[0].CoName)
                 </a>
             </th>
@@ -35,17 +39,38 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.County) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CoName)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.CoId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.CoId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.CoId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.County)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CoName)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.CoId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.CoId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.CoId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.County.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.County.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.County.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.County.PageIndex + 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>
