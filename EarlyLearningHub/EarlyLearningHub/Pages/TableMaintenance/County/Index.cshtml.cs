@@ -20,13 +20,21 @@ namespace EarlyLearningHub.Pages.TableMaintenance.County
 
         public IList<Models.County> County { get;set; }
 
-        public async Task OnGetAsync(string sortOrder)
+        public async Task OnGetAsync(string sortOrder, string searchString)
         {
             ////Add Sorting
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            CurrentFilter = searchString;
 
             IQueryable<Models.County> countyIQ = from s in _context.County
                 select s;
+
+            ////Add Search
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                countyIQ = countyIQ.Where(s => s.CoName.Contains(searchString));
+                                                 //|| s.FirstMidName.Contains(searchString));
+            }
 
             switch (sortOrder)
             {
