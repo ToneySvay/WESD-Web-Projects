@@ -1,0 +1,36 @@
+﻿@page
+@model EarlyLearningHub.Pages.TableMaintenance.Language.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Language[0].LangName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Language) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LangName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.LangId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.LangId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.LangId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

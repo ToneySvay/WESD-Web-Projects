@@ -1,0 +1,25 @@
+﻿@page
+@model EarlyLearningHub.Pages.TableMaintenance.IFSPStatus.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ifspstatus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ifspstatus.IsOptions)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ifspstatus.IsOptions)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Ifspstatus.IsId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

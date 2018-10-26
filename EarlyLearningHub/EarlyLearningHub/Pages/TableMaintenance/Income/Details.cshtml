@@ -1,0 +1,25 @@
+﻿@page
+@model EarlyLearningHub.Pages.TableMaintenance.Income.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Income</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Income.IncRange)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Income.IncRange)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Income.IncId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

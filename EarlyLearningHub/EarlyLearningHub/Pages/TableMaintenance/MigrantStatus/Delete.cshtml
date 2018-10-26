@@ -1,0 +1,28 @@
+﻿@page
+@model EarlyLearningHub.Pages.TableMaintenance.MigrantStatus.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MigrantStatus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MigrantStatus.MsOptions)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MigrantStatus.MsOptions)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="MigrantStatus.MsId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
