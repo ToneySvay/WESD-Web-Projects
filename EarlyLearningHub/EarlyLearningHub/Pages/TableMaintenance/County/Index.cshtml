@@ -1,0 +1,36 @@
+﻿@page
+@model EarlyLearningHub.Pages.TableMaintenance.County.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.County[0].CtyName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.County) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CtyName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CtyId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CtyId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CtyId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
