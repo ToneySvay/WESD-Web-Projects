@@ -18,16 +18,37 @@ namespace EarlyLearningHub.Pages.TableMaintenance.Provider
             _context = context;
         }
 
-        public IList<Models.Provider> Provider { get;set; }
+        public PaginatedList<Models.Provider> Provider { get; set; }
 
-        public async Task OnGetAsync(string sortOrder)
+        public async Task OnGetAsync(string sortOrder, string currentFilter, string searchString, int? pageIndex)
         {
+            CurrentSort = sortOrder;
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             TypeSort = sortOrder == "Type" ? "type_desc" : "Type";
+
+            if (searchString != null)
+            {
+                pageIndex = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            CurrentFilter = searchString;
+
+
 
             IQueryable<Models.Provider> providerIQ = from s in _context.Provider.Include(p => p.PrvdPt)
                                                      select s;
 
+            //Add Search
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                providerIQ = providerIQ.Where(s => s.PrvdName.Contains(searchString)
+                                                   || s.PrvdPt.PtName.Contains(searchString));
+               
+            }
 
             switch (sortOrder)
             {
@@ -45,17 +66,10 @@ namespace EarlyLearningHub.Pages.TableMaintenance.Provider
                     break;
             }
 
-
-
-
-
-
-            //Provider = await _context.Provider.Include(p => p.PrvdPt).ToListAsync();
-            //Provider = await providerIQ.AsNoTracking().ToListAsync();
-            Provider = await providerIQ.AsNoTracking().ToListAsync();
-
-            //Provider = await PaginatedList<Models.Provider>.CreateAsync(providerIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
-
+            //Add Paging
+            int pageSize = 10;
+            Provider = await PaginatedList<Models.Provider>.CreateAsync(
+                providerIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
 
         }
 
