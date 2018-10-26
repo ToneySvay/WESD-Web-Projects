@@ -20,9 +20,34 @@ namespace EarlyLearningHub.Pages.TableMaintenance.County
 
         public IList<Models.County> County { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
-            County = await _context.County.ToListAsync();
+            ////Add Sorting
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+
+            IQueryable<Models.County> countyIQ = from s in _context.County
+                select s;
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    countyIQ = countyIQ.OrderByDescending(s => s.CoName);
+                    break;
+                default:
+                    countyIQ = countyIQ.OrderBy(s => s.CoName);
+                    break;
+            }
+            ////////////////
+
+            County = await countyIQ.AsNoTracking().ToListAsync();//await _context.County.ToListAsync();
         }
+
+
+        //Add Sorting
+        public string NameSort { get; set; }
+        public string DateSort { get; set; }
+        public string CurrentFilter { get; set; }
+        public string CurrentSort { get; set; }
+
     }
 }

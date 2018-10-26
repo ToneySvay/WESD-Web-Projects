@@ -14,7 +14,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.County[0].CoName)
+                @*@Html.DisplayNameFor(model => model.County[0].CoName)*@
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.County[0].CoName)
+                </a>
             </th>
             <th></th>
         </tr>
