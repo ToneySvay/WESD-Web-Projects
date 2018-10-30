@@ -1,0 +1,36 @@
+﻿@page
+@model EarlyLearningHub.Pages.TableMaintenance.Option.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Option[0].OptValue)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Option) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OptValue)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.OptId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.OptId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.OptId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
