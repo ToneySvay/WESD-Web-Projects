@@ -9,7 +9,7 @@ namespace EarlyLearningHub.Models
         public int PlId { get; set; }
 
         [Required]
-        [Display(Name = "Quarter")]
+        [Display(Name = "Select the quarter  for this report")]
         public int PlQrId { get; set; }
 
         [Required]
@@ -113,7 +113,6 @@ namespace EarlyLearningHub.Models
 
 
         public QuarterlyRange PlQr { get; set; }
-
 
         public SparkRating PlSparkRatingBeginingOfYearSr { get; set; }
 

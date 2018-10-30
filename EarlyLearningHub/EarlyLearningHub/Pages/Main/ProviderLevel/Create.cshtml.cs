@@ -25,7 +25,7 @@ namespace EarlyLearningHub.Pages.Main.ProviderLevel
         ViewData["PlPeId"] = new SelectList(_context.Person, "PeId", "PeEmail");
         ViewData["PlPtId"] = new SelectList(_context.Provider, "PrvdId", "PrvdName");
         ViewData["PlPtId"] = new SelectList(_context.ProviderType, "PtId", "PtName");
-        ViewData["PlQrId"] = new SelectList(_context.QuarterlyRange, "QrId", "QrName");
+        ViewData["PlQrId"] = new SelectList(_context.QuarterlyRange, "QrId", "QuarterDate");
         ViewData["PlSparkRatingBeginingOfYearSrId"] = new SelectList(_context.SparkRating, "SrId", "SrName");
         ViewData["PlSparkRatingEndOfYearSrId"] = new SelectList(_context.SparkRating, "SrId", "SrName");
             return Page();

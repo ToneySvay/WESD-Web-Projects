@@ -2,10 +2,10 @@
 @model EarlyLearningHub.Pages.TableMaintenance.ReceiveService.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Reevice Services";
 }
 
-<h2>Index</h2>
+@*<h2>Index</h2>*@
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -20,17 +20,18 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.ReceiveService) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.RsOptions)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.RsId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.RsId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.RsId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.ReceiveService)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RsOptions)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.RsId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.RsId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.RsId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
