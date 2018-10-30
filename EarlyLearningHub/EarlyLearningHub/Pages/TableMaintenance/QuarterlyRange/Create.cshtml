@@ -1,0 +1,56 @@
+﻿@page
+@model EarlyLearningHub.Pages.TableMaintenance.QuarterlyRange.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>QuarterlyRange</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="QuarterlyRange.QrName" class="control-label"></label>
+                <input asp-for="QuarterlyRange.QrName" class="form-control" />
+                <span asp-validation-for="QuarterlyRange.QrName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuarterlyRange.QrBeginDate" class="control-label"></label>
+                <input asp-for="QuarterlyRange.QrBeginDate" class="form-control" />
+                <span asp-validation-for="QuarterlyRange.QrBeginDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuarterlyRange.QrEndDate" class="control-label"></label>
+                <input asp-for="QuarterlyRange.QrEndDate" class="form-control" />
+                <span asp-validation-for="QuarterlyRange.QrEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        @*<input asp-for="QuarterlyRange.QrActive" /> @Html.DisplayNameFor(model => model.QrActive))*@
+                        @Html.CheckBox("QrActive", true)
+                        @*<label asp-for="QuarterlyRange.QrActive" class="control-label"></label>
+                        <input asp-for="QuarterlyRange.QrActive" class="form-control" />
+                        <span asp-validation-for="QuarterlyRange.QrActive" class="text-danger"></span>*@
+                        @*<input asp-for="QuarterlyRange.QrActive" type="checkbox" value="" />@Html.DisplayNameFor(model => model.QrActive)*@
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

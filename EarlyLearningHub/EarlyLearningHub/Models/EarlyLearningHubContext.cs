@@ -26,9 +26,11 @@ namespace EarlyLearningHub.Models
         public virtual DbSet<Income> Income { get; set; }
         public virtual DbSet<Language> Language { get; set; }
         public virtual DbSet<MigrantStatus> MigrantStatus { get; set; }
+        public virtual DbSet<Option> Option { get; set; }
         public virtual DbSet<OtherNameType> OtherNameType { get; set; }
         public virtual DbSet<Provider> Provider { get; set; }
         public virtual DbSet<ProviderType> ProviderType { get; set; }
+        public virtual DbSet<QuarterlyRange> QuarterlyRange { get; set; }
         public virtual DbSet<RaceEthnicity> RaceEthnicity { get; set; }
         public virtual DbSet<ReceiveService> ReceiveService { get; set; }
         public virtual DbSet<SparkRating> SparkRating { get; set; }
@@ -192,6 +194,19 @@ namespace EarlyLearningHub.Models
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<Option>(entity =>
+            {
+                entity.HasKey(e => e.OptId);
+
+                entity.Property(e => e.OptId).HasColumnName("OPT_ID");
+
+                entity.Property(e => e.OptValue)
+                    .IsRequired()
+                    .HasColumnName("OPT_Value")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<OtherNameType>(entity =>
             {
                 entity.HasKey(e => e.OntId);
@@ -237,6 +252,28 @@ namespace EarlyLearningHub.Models
                     .HasColumnName("PT_Name")
                     .HasMaxLength(100)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<QuarterlyRange>(entity =>
+            {
+                entity.HasKey(e => e.QrId);
+
+                entity.Property(e => e.QrId).HasColumnName("QR_ID");
+
+                entity.Property(e => e.QrActive).HasColumnName("QR_Active");
+
+                entity.Property(e => e.QrBeginDate)
+                    .HasColumnName("QR_BeginDate")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.QrEndDate)
+                    .HasColumnName("QR_EndDate")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.QrName)
+                    .IsRequired()
+                    .HasColumnName("QR_Name")
+                    .HasMaxLength(50);
             });
 
             modelBuilder.Entity<RaceEthnicity>(entity =>

@@ -1,0 +1,56 @@
+﻿@page
+@model EarlyLearningHub.Pages.TableMaintenance.QuarterlyRange.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QuarterlyRange[0].QrName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuarterlyRange[0].QrBeginDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuarterlyRange[0].QrEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuarterlyRange[0].QrActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.QuarterlyRange) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QrName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QrBeginDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QrEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QrActive)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.QrId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.QrId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.QrId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
