@@ -3,15 +3,17 @@ using System.Collections.Generic;
 
 namespace EarlyLearningHub.Models
 {
-    public partial class Option
+    public partial class Person
     {
-        public Option()
+        public Person()
         {
             ProviderLevel = new HashSet<ProviderLevel>();
         }
 
-        public int OptId { get; set; }
-        public string OptValue { get; set; }
+        public int PeId { get; set; }
+        public string PeFirstName { get; set; }
+        public string PeLastName { get; set; }
+        public string PeEmail { get; set; }
 
         public ICollection<ProviderLevel> ProviderLevel { get; set; }
     }

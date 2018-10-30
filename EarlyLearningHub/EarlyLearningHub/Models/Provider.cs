@@ -7,6 +7,11 @@ namespace EarlyLearningHub.Models
 {
     public partial class Provider
     {
+        public Provider()
+        {
+            ProviderLevel = new HashSet<ProviderLevel>();
+        }
+
         public int PrvdId { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "Provider cannot be longer than 100 characters.")]
@@ -17,6 +22,8 @@ namespace EarlyLearningHub.Models
         [Display(Name = "Provider Type")]
         public int PrvdPtId { get; set; }
         [Display(Name = "Provider Type")]
+
         public ProviderType PrvdPt { get; set; }
+        public ICollection<ProviderLevel> ProviderLevel { get; set; }
     }
 }

@@ -10,6 +10,7 @@ namespace EarlyLearningHub.Models
         public ProviderType()
         {
             Provider = new HashSet<Provider>();
+            ProviderLevel = new HashSet<ProviderLevel>();
         }
 
         public int PtId { get; set; }
@@ -20,5 +21,6 @@ namespace EarlyLearningHub.Models
         public string PtName { get; set; }
 
         public ICollection<Provider> Provider { get; set; }
+        public ICollection<ProviderLevel> ProviderLevel { get; set; }
     }
 }

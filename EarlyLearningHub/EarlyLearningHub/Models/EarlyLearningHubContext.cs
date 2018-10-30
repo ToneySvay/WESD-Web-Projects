@@ -28,7 +28,9 @@ namespace EarlyLearningHub.Models
         public virtual DbSet<MigrantStatus> MigrantStatus { get; set; }
         public virtual DbSet<Option> Option { get; set; }
         public virtual DbSet<OtherNameType> OtherNameType { get; set; }
+        public virtual DbSet<Person> Person { get; set; }
         public virtual DbSet<Provider> Provider { get; set; }
+        public virtual DbSet<ProviderLevel> ProviderLevel { get; set; }
         public virtual DbSet<ProviderType> ProviderType { get; set; }
         public virtual DbSet<QuarterlyRange> QuarterlyRange { get; set; }
         public virtual DbSet<RaceEthnicity> RaceEthnicity { get; set; }
@@ -220,6 +222,31 @@ namespace EarlyLearningHub.Models
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<Person>(entity =>
+            {
+                entity.HasKey(e => e.PeId);
+
+                entity.Property(e => e.PeId).HasColumnName("PE_ID");
+
+                entity.Property(e => e.PeEmail)
+                    .IsRequired()
+                    .HasColumnName("PE_Email")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PeFirstName)
+                    .IsRequired()
+                    .HasColumnName("PE_FirstName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PeLastName)
+                    .IsRequired()
+                    .HasColumnName("PE_LastName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Provider>(entity =>
             {
                 entity.HasKey(e => e.PrvdId);
@@ -239,6 +266,121 @@ namespace EarlyLearningHub.Models
                     .HasForeignKey(d => d.PrvdPtId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Provider_ProviderType");
+            });
+
+            modelBuilder.Entity<ProviderLevel>(entity =>
+            {
+                entity.HasKey(e => e.PlId);
+
+                entity.Property(e => e.PlId).HasColumnName("PL_ID");
+
+                entity.Property(e => e.PlChildLevelAssessmentTools)
+                    .IsRequired()
+                    .HasColumnName("PL_ChildLevelAssessmentTools")
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PlChildLevelScreeningTools)
+                    .IsRequired()
+                    .HasColumnName("PL_ChildLevelScreeningTools")
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PlClassroomClassObservationCompleted).HasColumnName("PL_ClassroomClassObservationCompleted");
+
+                entity.Property(e => e.PlCurriculaUsedPpc)
+                    .IsRequired()
+                    .HasColumnName("PL_CurriculaUsedPPC")
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PlDailyEndTime).HasColumnName("PL_DailyEndTIme");
+
+                entity.Property(e => e.PlDailyStartTime).HasColumnName("PL_DailyStartTime");
+
+                entity.Property(e => e.PlDaysOfWeekPpsoccurs)
+                    .IsRequired()
+                    .HasColumnName("PL_DaysOfWeekPPSOccurs")
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PlElhId).HasColumnName("PL_ELH_ID");
+
+                entity.Property(e => e.PlLicencedOfficeChildCareOptId).HasColumnName("PL_LicencedOfficeChildCare_OPT_ID");
+
+                entity.Property(e => e.PlNumChildrenOnWaitlist).HasColumnName("PL_NumChildrenOnWaitlist");
+
+                entity.Property(e => e.PlNumClassroomServingPpc).HasColumnName("PL_NumClassroomServingPPC");
+
+                entity.Property(e => e.PlNumOfActualServiceHrsYtd).HasColumnName("PL_NumOfActualServiceHrsYTD");
+
+                entity.Property(e => e.PlNumOfDaysInProgramYear).HasColumnName("PL_NumOfDaysInProgramYear");
+
+                entity.Property(e => e.PlPeId).HasColumnName("PL_PE_ID");
+
+                entity.Property(e => e.PlPlannedServiceHours).HasColumnName("PL_PlannedServiceHours");
+
+                entity.Property(e => e.PlPrId).HasColumnName("PL_PR_ID");
+
+                entity.Property(e => e.PlProgEndDate)
+                    .HasColumnName("PL_ProgEndDate")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.PlProgStartDate)
+                    .HasColumnName("PL_ProgStartDate")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.PlPtId).HasColumnName("PL_PT_ID");
+
+                entity.Property(e => e.PlQrId).HasColumnName("PL_QR_ID");
+
+                entity.Property(e => e.PlSparkRatingBeginingOfYearSrId).HasColumnName("PL_SparkRatingBeginingOfYear_SR_ID");
+
+                entity.Property(e => e.PlSparkRatingEndOfYearSrId).HasColumnName("PL_SparkRatingEndOfYear_SR_ID");
+
+                entity.HasOne(d => d.PlElh)
+                    .WithMany(p => p.ProviderLevel)
+                    .HasForeignKey(d => d.PlElhId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ProviderLevel_ProviderLevel");
+
+                entity.HasOne(d => d.PlLicencedOfficeChildCareOpt)
+                    .WithMany(p => p.ProviderLevel)
+                    .HasForeignKey(d => d.PlLicencedOfficeChildCareOptId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ProviderLevel_Option");
+
+                entity.HasOne(d => d.PlPe)
+                    .WithMany(p => p.ProviderLevel)
+                    .HasForeignKey(d => d.PlPeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ProviderLevel_Person");
+
+                entity.HasOne(d => d.PlPt)
+                    .WithMany(p => p.ProviderLevel)
+                    .HasForeignKey(d => d.PlPtId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ProviderLevel_Provider");
+
+                entity.HasOne(d => d.PlPtNavigation)
+                    .WithMany(p => p.ProviderLevel)
+                    .HasForeignKey(d => d.PlPtId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ProviderLevel_ProviderType");
+
+                entity.HasOne(d => d.PlQr)
+                    .WithMany(p => p.ProviderLevel)
+                    .HasForeignKey(d => d.PlQrId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ProviderLevel_QuarterlyRange");
+
+                entity.HasOne(d => d.PlSparkRatingBeginingOfYearSr)
+                    .WithMany(p => p.ProviderLevelPlSparkRatingBeginingOfYearSr)
+                    .HasForeignKey(d => d.PlSparkRatingBeginingOfYearSrId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ProviderLevel_SparkRating");
+
+                entity.HasOne(d => d.PlSparkRatingEndOfYearSr)
+                    .WithMany(p => p.ProviderLevelPlSparkRatingEndOfYearSr)
+                    .HasForeignKey(d => d.PlSparkRatingEndOfYearSrId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ProviderLevel_SparkRating1");
             });
 
             modelBuilder.Entity<ProviderType>(entity =>
@@ -264,16 +406,17 @@ namespace EarlyLearningHub.Models
 
                 entity.Property(e => e.QrBeginDate)
                     .HasColumnName("QR_BeginDate")
-                    .HasColumnType("date");
+                    .HasColumnType("datetime");
 
                 entity.Property(e => e.QrEndDate)
                     .HasColumnName("QR_EndDate")
-                    .HasColumnType("date");
+                    .HasColumnType("datetime");
 
                 entity.Property(e => e.QrName)
                     .IsRequired()
                     .HasColumnName("QR_Name")
-                    .HasMaxLength(50);
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<RaceEthnicity>(entity =>

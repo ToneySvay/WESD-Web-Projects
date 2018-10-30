@@ -1,0 +1,140 @@
+﻿@page
+@model EarlyLearningHub.Pages.Main.ProviderLevel.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>ProviderLevel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProviderLevel.PlId" />
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlQrId" class="control-label"></label>
+                <select asp-for="ProviderLevel.PlQrId" class="form-control" asp-items="ViewBag.PlQrId"></select>
+                <span asp-validation-for="ProviderLevel.PlQrId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlElhId" class="control-label"></label>
+                <select asp-for="ProviderLevel.PlElhId" class="form-control" asp-items="ViewBag.PlElhId"></select>
+                <span asp-validation-for="ProviderLevel.PlElhId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlPrId" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlPrId" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlPrId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlPeId" class="control-label"></label>
+                <select asp-for="ProviderLevel.PlPeId" class="form-control" asp-items="ViewBag.PlPeId"></select>
+                <span asp-validation-for="ProviderLevel.PlPeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlPtId" class="control-label"></label>
+                <select asp-for="ProviderLevel.PlPtId" class="form-control" asp-items="ViewBag.PlPtId"></select>
+                <span asp-validation-for="ProviderLevel.PlPtId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlLicencedOfficeChildCareOptId" class="control-label"></label>
+                <select asp-for="ProviderLevel.PlLicencedOfficeChildCareOptId" class="form-control" asp-items="ViewBag.PlLicencedOfficeChildCareOptId"></select>
+                <span asp-validation-for="ProviderLevel.PlLicencedOfficeChildCareOptId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlNumClassroomServingPpc" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlNumClassroomServingPpc" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlNumClassroomServingPpc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlProgStartDate" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlProgStartDate" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlProgStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlProgEndDate" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlProgEndDate" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlProgEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlDaysOfWeekPpsoccurs" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlDaysOfWeekPpsoccurs" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlDaysOfWeekPpsoccurs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlDailyStartTime" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlDailyStartTime" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlDailyStartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlDailyEndTime" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlDailyEndTime" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlDailyEndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlNumOfDaysInProgramYear" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlNumOfDaysInProgramYear" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlNumOfDaysInProgramYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlPlannedServiceHours" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlPlannedServiceHours" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlPlannedServiceHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlNumOfActualServiceHrsYtd" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlNumOfActualServiceHrsYtd" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlNumOfActualServiceHrsYtd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlNumChildrenOnWaitlist" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlNumChildrenOnWaitlist" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlNumChildrenOnWaitlist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlCurriculaUsedPpc" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlCurriculaUsedPpc" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlCurriculaUsedPpc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlChildLevelAssessmentTools" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlChildLevelAssessmentTools" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlChildLevelAssessmentTools" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlChildLevelScreeningTools" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlChildLevelScreeningTools" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlChildLevelScreeningTools" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlClassroomClassObservationCompleted" class="control-label"></label>
+                <input asp-for="ProviderLevel.PlClassroomClassObservationCompleted" class="form-control" />
+                <span asp-validation-for="ProviderLevel.PlClassroomClassObservationCompleted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlSparkRatingBeginingOfYearSrId" class="control-label"></label>
+                <select asp-for="ProviderLevel.PlSparkRatingBeginingOfYearSrId" class="form-control" asp-items="ViewBag.PlSparkRatingBeginingOfYearSrId"></select>
+                <span asp-validation-for="ProviderLevel.PlSparkRatingBeginingOfYearSrId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProviderLevel.PlSparkRatingEndOfYearSrId" class="control-label"></label>
+                <select asp-for="ProviderLevel.PlSparkRatingEndOfYearSrId" class="form-control" asp-items="ViewBag.PlSparkRatingEndOfYearSrId"></select>
+                <span asp-validation-for="ProviderLevel.PlSparkRatingEndOfYearSrId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

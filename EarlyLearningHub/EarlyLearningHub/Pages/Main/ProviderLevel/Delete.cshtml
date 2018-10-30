@@ -1,0 +1,160 @@
+﻿@page
+@model EarlyLearningHub.Pages.Main.ProviderLevel.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProviderLevel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlPrId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlPrId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlNumClassroomServingPpc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlNumClassroomServingPpc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlProgStartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlProgStartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlProgEndDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlProgEndDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlDaysOfWeekPpsoccurs)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlDaysOfWeekPpsoccurs)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlDailyStartTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlDailyStartTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlDailyEndTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlDailyEndTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlNumOfDaysInProgramYear)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlNumOfDaysInProgramYear)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlPlannedServiceHours)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlPlannedServiceHours)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlNumOfActualServiceHrsYtd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlNumOfActualServiceHrsYtd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlNumChildrenOnWaitlist)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlNumChildrenOnWaitlist)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlCurriculaUsedPpc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlCurriculaUsedPpc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlChildLevelAssessmentTools)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlChildLevelAssessmentTools)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlChildLevelScreeningTools)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlChildLevelScreeningTools)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlClassroomClassObservationCompleted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlClassroomClassObservationCompleted)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlElh)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlElh.ElhName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlLicencedOfficeChildCareOpt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlLicencedOfficeChildCareOpt.OptValue)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlPe)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlPe.PeEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlPt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlPt.PrvdName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlPtNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlPtNavigation.PtName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlQr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlQr.QrName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlSparkRatingBeginingOfYearSr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlSparkRatingBeginingOfYearSr.SrName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderLevel.PlSparkRatingEndOfYearSr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProviderLevel.PlSparkRatingEndOfYearSr.SrName)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ProviderLevel.PlId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
