@@ -35,7 +35,7 @@ namespace EarlyLearningHub.Models
 
         [Display(Name = "Select the Quarter for this report")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
-        public string QuarterDate
+        public string QuarterDateRange
         {
            
             get

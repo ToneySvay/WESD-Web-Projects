@@ -2,12 +2,12 @@
 @model EarlyLearningHub.Pages.Main.ProviderLevel.CreateModel
 
 @{
-    ViewData["Title"] = "Provider Level";
+    ViewData["Title"] = "Create";
 }
 
-<h2>Provider Level</h2>
+<h2>Create</h2>
 
-@*<h4>ProviderLevel</h4>*@
+<h4>ProviderLevel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,9 +22,8 @@
                 <select asp-for="ProviderLevel.PlElhId" class ="form-control" asp-items="ViewBag.PlElhId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="ProviderLevel.PlPrId" class="control-label"></label>
-                <input asp-for="ProviderLevel.PlPrId" class="form-control" />
-                <span asp-validation-for="ProviderLevel.PlPrId" class="text-danger"></span>
+                <label asp-for="ProviderLevel.PlPrvdId" class="control-label"></label>
+                <select asp-for="ProviderLevel.PlPrvdId" class ="form-control" asp-items="ViewBag.PlPrvdId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="ProviderLevel.PlPeId" class="control-label"></label>

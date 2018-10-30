@@ -33,8 +33,8 @@ namespace EarlyLearningHub.Pages.Main.ProviderLevel
                 .Include(p => p.PlElh)
                 .Include(p => p.PlLicencedOfficeChildCareOpt)
                 .Include(p => p.PlPe)
+                .Include(p => p.PlPrvd)
                 .Include(p => p.PlPt)
-                .Include(p => p.PlPtNavigation)
                 .Include(p => p.PlQr)
                 .Include(p => p.PlSparkRatingBeginingOfYearSr)
                 .Include(p => p.PlSparkRatingEndOfYearSr).FirstOrDefaultAsync(m => m.PlId == id);
@@ -46,9 +46,9 @@ namespace EarlyLearningHub.Pages.Main.ProviderLevel
            ViewData["PlElhId"] = new SelectList(_context.Hub, "ElhId", "ElhName");
            ViewData["PlLicencedOfficeChildCareOptId"] = new SelectList(_context.Option, "OptId", "OptValue");
            ViewData["PlPeId"] = new SelectList(_context.Person, "PeId", "PeEmail");
-           ViewData["PlPtId"] = new SelectList(_context.Provider, "PrvdId", "PrvdName");
+           ViewData["PlPrvdId"] = new SelectList(_context.Provider, "PrvdId", "PrvdName");
            ViewData["PlPtId"] = new SelectList(_context.ProviderType, "PtId", "PtName");
-           ViewData["PlQrId"] = new SelectList(_context.QuarterlyRange, "QrId", "QrName");
+           ViewData["PlQrId"] = new SelectList(_context.QuarterlyRange, "QrId", "QuarterDateRange");
            ViewData["PlSparkRatingBeginingOfYearSrId"] = new SelectList(_context.SparkRating, "SrId", "SrName");
            ViewData["PlSparkRatingEndOfYearSrId"] = new SelectList(_context.SparkRating, "SrId", "SrName");
             return Page();

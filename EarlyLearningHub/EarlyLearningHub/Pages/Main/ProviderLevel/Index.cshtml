@@ -2,10 +2,10 @@
 @model EarlyLearningHub.Pages.Main.ProviderLevel.IndexModel
 
 @{
-    ViewData["Title"] = "Provider Level";
+    ViewData["Title"] = "Index";
 }
 
-@*<h2>Index</h2>*@
+<h2>Index</h2>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -13,9 +13,6 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ProviderLevel[0].PlPrId)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.ProviderLevel[0].PlNumClassroomServingPpc)
             </th>
@@ -68,10 +65,10 @@
                 @Html.DisplayNameFor(model => model.ProviderLevel[0].PlPe)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProviderLevel[0].PlPt)
+                @Html.DisplayNameFor(model => model.ProviderLevel[0].PlPrvd)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProviderLevel[0].PlPtNavigation)
+                @Html.DisplayNameFor(model => model.ProviderLevel[0].PlPt)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ProviderLevel[0].PlQr)
@@ -86,84 +83,80 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.ProviderLevel)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlPrId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlNumClassroomServingPpc)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlProgStartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlProgEndDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlDaysOfWeekPpsoccurs)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlDailyStartTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlDailyEndTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlNumOfDaysInProgramYear)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlPlannedServiceHours)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlNumOfActualServiceHrsYtd)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlNumChildrenOnWaitlist)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlCurriculaUsedPpc)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlChildLevelAssessmentTools)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlChildLevelScreeningTools)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlClassroomClassObservationCompleted)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlElh.ElhName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlLicencedOfficeChildCareOpt.OptValue)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlPe.PeEmail)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlPt.PrvdName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlPtNavigation.PtName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlQr.QrName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlSparkRatingBeginingOfYearSr.SrName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PlSparkRatingEndOfYearSr.SrName)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.PlId">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.PlId">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.PlId">Delete</a>
-                </td>
-            </tr>
-        }
+@foreach (var item in Model.ProviderLevel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlNumClassroomServingPpc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlProgStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlProgEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlDaysOfWeekPpsoccurs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlDailyStartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlDailyEndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlNumOfDaysInProgramYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlPlannedServiceHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlNumOfActualServiceHrsYtd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlNumChildrenOnWaitlist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlCurriculaUsedPpc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlChildLevelAssessmentTools)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlChildLevelScreeningTools)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlClassroomClassObservationCompleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlElh.ElhName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlLicencedOfficeChildCareOpt.OptValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlPe.PeEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlPrvd.PrvdName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlPt.PtName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlQr.QrName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlSparkRatingBeginingOfYearSr.SrName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlSparkRatingEndOfYearSr.SrName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PlId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PlId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PlId">Delete</a>
+            </td>
+        </tr>
+}
     </tbody>
 </table>

@@ -316,8 +316,6 @@ namespace EarlyLearningHub.Models
 
                 entity.Property(e => e.PlPlannedServiceHours).HasColumnName("PL_PlannedServiceHours");
 
-                entity.Property(e => e.PlPrId).HasColumnName("PL_PR_ID");
-
                 entity.Property(e => e.PlProgEndDate)
                     .HasColumnName("PL_ProgEndDate")
                     .HasColumnType("datetime");
@@ -325,6 +323,8 @@ namespace EarlyLearningHub.Models
                 entity.Property(e => e.PlProgStartDate)
                     .HasColumnName("PL_ProgStartDate")
                     .HasColumnType("datetime");
+
+                entity.Property(e => e.PlPrvdId).HasColumnName("PL_PRVD_ID");
 
                 entity.Property(e => e.PlPtId).HasColumnName("PL_PT_ID");
 
@@ -338,7 +338,7 @@ namespace EarlyLearningHub.Models
                     .WithMany(p => p.ProviderLevel)
                     .HasForeignKey(d => d.PlElhId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ProviderLevel_ProviderLevel");
+                    .HasConstraintName("FK_ProviderLevel_Hub");
 
                 entity.HasOne(d => d.PlLicencedOfficeChildCareOpt)
                     .WithMany(p => p.ProviderLevel)
@@ -352,13 +352,13 @@ namespace EarlyLearningHub.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ProviderLevel_Person");
 
-                entity.HasOne(d => d.PlPt)
+                entity.HasOne(d => d.PlPrvd)
                     .WithMany(p => p.ProviderLevel)
-                    .HasForeignKey(d => d.PlPtId)
+                    .HasForeignKey(d => d.PlPrvdId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ProviderLevel_Provider");
 
-                entity.HasOne(d => d.PlPtNavigation)
+                entity.HasOne(d => d.PlPt)
                     .WithMany(p => p.ProviderLevel)
                     .HasForeignKey(d => d.PlPtId)
                     .OnDelete(DeleteBehavior.ClientSetNull)

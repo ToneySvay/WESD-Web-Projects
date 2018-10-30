@@ -26,8 +26,8 @@ namespace EarlyLearningHub.Pages.Main.ProviderLevel
                 .Include(p => p.PlElh)
                 .Include(p => p.PlLicencedOfficeChildCareOpt)
                 .Include(p => p.PlPe)
+                .Include(p => p.PlPrvd)
                 .Include(p => p.PlPt)
-                .Include(p => p.PlPtNavigation)
                 .Include(p => p.PlQr)
                 .Include(p => p.PlSparkRatingBeginingOfYearSr)
                 .Include(p => p.PlSparkRatingEndOfYearSr).ToListAsync();
