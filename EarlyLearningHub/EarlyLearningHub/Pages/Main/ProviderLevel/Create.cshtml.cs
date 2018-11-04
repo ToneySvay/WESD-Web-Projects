@@ -38,6 +38,15 @@ namespace EarlyLearningHub.Pages.Main.ProviderLevel
         {
             if (!ModelState.IsValid)
             {
+                ViewData["PlElhId"] = new SelectList(_context.Hub, "ElhId", "ElhName");
+                ViewData["PlLicencedOfficeChildCareOptId"] = new SelectList(_context.Option, "OptId", "OptValue");
+                ViewData["PlPeId"] = new SelectList(_context.Person, "PeId", "PeEmail");
+                ViewData["PlPrvdId"] = new SelectList(_context.Provider, "PrvdId", "PrvdName");
+                ViewData["PlPtId"] = new SelectList(_context.ProviderType, "PtId", "PtName");
+                ViewData["PlQrId"] = new SelectList(_context.QuarterlyRange, "QrId", "QuarterDateRange");
+                ViewData["PlSparkRatingBeginingOfYearSrId"] = new SelectList(_context.SparkRating, "SrId", "SrName");
+                ViewData["PlSparkRatingEndOfYearSrId"] = new SelectList(_context.SparkRating, "SrId", "SrName");
+
                 return Page();
             }
 

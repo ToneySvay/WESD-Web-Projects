@@ -28,11 +28,17 @@ namespace EarlyLearningHub.Models
         [Required]
         [Display(Name = "Total number of classrooms serving Preschool Promise children")]
         public int PlNumClassroomServingPpc { get; set; }
+
+        //[RegularExpression(@"^((0|1)\d{1})/((0|1|2)\d{1})/((19|20)\d{2})",ErrorMessage = "Format must be in MM/DD/YYYY eg. 01/01/2018")]
         [Required]
         [Display(Name = "Program Start Date")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime PlProgStartDate { get; set; }
+
+        //[RegularExpression(@"^((0|1)\d{1})/((0|1|2)\d{1})/((19|20)\d{2})",ErrorMessage = "Format must be in MM / DD / YYYY eg. 01 / 01 / 2018")]
         [Required]
         [Display(Name = "Program End Date")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime PlProgEndDate { get; set; }
         [Required]
         [Display(Name = "Which days of the week Preschool Promise services are occurring:")]
