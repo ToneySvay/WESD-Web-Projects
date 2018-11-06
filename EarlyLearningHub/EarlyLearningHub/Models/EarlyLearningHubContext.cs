@@ -720,9 +720,7 @@ namespace EarlyLearningHub.Models
             {
                 entity.HasKey(e => e.SlId);
 
-                entity.Property(e => e.SlId)
-                    .HasColumnName("SL_ID")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.SlId).HasColumnName("SL_ID");
 
                 entity.Property(e => e.SlAddress)
                     .IsRequired()
@@ -831,9 +829,7 @@ namespace EarlyLearningHub.Models
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
-                entity.Property(e => e.SlMigrantStatusOptId)
-                    .HasColumnName("SL_MigrantStatus_OPT_ID")
-                    .ValueGeneratedOnAdd();
+                entity.Property(e => e.SlMigrantStatusOptId).HasColumnName("SL_MigrantStatus_OPT_ID");
 
                 entity.Property(e => e.SlOntId).HasColumnName("SL_ONT_ID");
 

@@ -1,0 +1,324 @@
+﻿@page
+@model EarlyLearningHub.Pages.Main.StudentLevel.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlLegalFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlLegalLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlLegalMiddleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlGenerationCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlOtherLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlOtherFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlOtherMiddleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlSsid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlBirthdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlGeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlStId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlPostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlRequiredSpecializedServices)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlAssignedClassromName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlAverageFromQ1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlAverageFromQ2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlAverageFromQ3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlAverageFromQ4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlChildAssessmentPerformDate1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlChildAssessmentPerformDate2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlChildAssessmentPerformDate3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlAsqpeformedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlParentTeacherConferenceDate1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlParentTeacherConferenceDate2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlCo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlEr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlFirstLanguageLang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlFosterCareOpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlFreeReducedLunchProgramOpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlHomelessStatusOpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlIfspOpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlInc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlMigrantStatusOpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlOnt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlPrvd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlRe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlRecieveServicesOpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlSecondLanguageLang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlSnapOpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlSsiOpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlTanfOpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlThirdLanguageLang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlWicOpt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.StudentLevel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlLegalFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlLegalLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlLegalMiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlGenerationCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlOtherLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlOtherFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlOtherMiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlSsid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlBirthdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlGeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlStId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlPostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlRequiredSpecializedServices)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlAssignedClassromName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlAverageFromQ1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlAverageFromQ2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlAverageFromQ3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlAverageFromQ4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlChildAssessmentPerformDate1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlChildAssessmentPerformDate2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlChildAssessmentPerformDate3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlAsqpeformedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlParentTeacherConferenceDate1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlParentTeacherConferenceDate2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlCo.CoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlEr.ErType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlFirstLanguageLang.LangName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlFosterCareOpt.OptValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlFreeReducedLunchProgramOpt.OptValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlHomelessStatusOpt.OptValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlIfspOpt.OptValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlInc.IncRange)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlMigrantStatusOpt.OptValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlOnt.OntName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlPrvd.PrvdName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlRe.ReName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlRecieveServicesOpt.OptValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlSecondLanguageLang.LangName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlSnapOpt.OptValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlSsiOpt.OptValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlTanfOpt.OptValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlThirdLanguageLang.LangName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlWicOpt.OptValue)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.SlId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.SlId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SlId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
