@@ -2,3 +2,9 @@
 @model FileUploadModel
 @{
 }
+
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" asp-for="Upload" />
+    <input type="submit" value ="Upload"/>
+</form>

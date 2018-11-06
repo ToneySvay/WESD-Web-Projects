@@ -15,9 +15,13 @@ namespace EarlyLearningHub.Models
         {
         }
 
+        public virtual DbSet<Attendance> Attendance { get; set; }
+        public virtual DbSet<AttendanceAverage> AttendanceAverage { get; set; }
+        public virtual DbSet<ChildLevel> ChildLevel { get; set; }
         public virtual DbSet<County> County { get; set; }
         public virtual DbSet<EducationLevel> EducationLevel { get; set; }
         public virtual DbSet<ExitReason> ExitReason { get; set; }
+        public virtual DbSet<FileUpload> FileUpload { get; set; }
         public virtual DbSet<FosterCare> FosterCare { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<HomelessStatus> HomelessStatus { get; set; }
@@ -37,6 +41,7 @@ namespace EarlyLearningHub.Models
         public virtual DbSet<ReceiveService> ReceiveService { get; set; }
         public virtual DbSet<SparkRating> SparkRating { get; set; }
         public virtual DbSet<State> State { get; set; }
+        public virtual DbSet<StudentLevel> StudentLevel { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -49,6 +54,219 @@ namespace EarlyLearningHub.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Attendance>(entity =>
+            {
+                entity.HasKey(e => e.AttId);
+
+                entity.Property(e => e.AttId)
+                    .HasColumnName("ATT_ID")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.AttEndDate)
+                    .HasColumnName("ATT_EndDate")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.AttFromDateRange)
+                    .HasColumnName("ATT_From_DateRange")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.AttSchoolYear)
+                    .HasColumnName("ATT_SCHOOL_YEAR")
+                    .HasMaxLength(4)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.AttStartDate)
+                    .HasColumnName("ATT_StartDate")
+                    .HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<AttendanceAverage>(entity =>
+            {
+                entity.HasKey(e => e.AtaId);
+
+                entity.Property(e => e.AtaId).HasColumnName("ATA_ID");
+
+                entity.Property(e => e.AtaAttId).HasColumnName("ATA_ATT_ID");
+
+                entity.Property(e => e.AtaAverage)
+                    .HasColumnName("ATA_Average")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClId).HasColumnName("CL_ID");
+            });
+
+            modelBuilder.Entity<ChildLevel>(entity =>
+            {
+                entity.HasKey(e => e.ClId);
+
+                entity.Property(e => e.ClId)
+                    .HasColumnName("CL_ID")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.ClAddress)
+                    .IsRequired()
+                    .HasColumnName("CL_Address")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClAsqpeformedDate)
+                    .HasColumnName("CL_ASQPeformedDate")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.ClAssignedClassromName)
+                    .HasColumnName("CL_AssignedClassromName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClAtaId).HasColumnName("CL_ATA_ID");
+
+                entity.Property(e => e.ClBirthdate)
+                    .HasColumnName("CL_Birthdate")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.ClChildAssessmentPerformDate1)
+                    .HasColumnName("CL_ChildAssessmentPerformDate1")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.ClChildAssessmentPerformDate2)
+                    .HasColumnName("CL_ChildAssessmentPerformDate2")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.ClChildAssessmentPerformDate3)
+                    .HasColumnName("CL_ChildAssessmentPerformDate3")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.ClCity)
+                    .IsRequired()
+                    .HasColumnName("CL_City")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClCoId).HasColumnName("CL_CO_ID");
+
+                entity.Property(e => e.ClEmail)
+                    .IsRequired()
+                    .HasColumnName("CL_Email")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClEndDate)
+                    .HasColumnName("CL_EndDate")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.ClErId).HasColumnName("CL_ER_ID");
+
+                entity.Property(e => e.ClFirstLanguageLangId).HasColumnName("CL_FirstLanguage_LANG_ID");
+
+                entity.Property(e => e.ClFosterCareOptId).HasColumnName("CL_FosterCare_OPT_ID");
+
+                entity.Property(e => e.ClFreeReducedLunchProgramOptId).HasColumnName("CL_FreeReducedLunchProgram_OPT_ID");
+
+                entity.Property(e => e.ClGeId).HasColumnName("CL_GE_ID");
+
+                entity.Property(e => e.ClGenerationCode)
+                    .IsRequired()
+                    .HasColumnName("CL_GenerationCode")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClHomelessStatusOptId).HasColumnName("CL_HomelessStatus_OPT_ID");
+
+                entity.Property(e => e.ClIfspOptId).HasColumnName("CL_IFSP_OPT_ID");
+
+                entity.Property(e => e.ClIncId).HasColumnName("CL_INC_ID");
+
+                entity.Property(e => e.ClLegalFirstName)
+                    .IsRequired()
+                    .HasColumnName("CL_LegalFirstName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClLegalLastName)
+                    .IsRequired()
+                    .HasColumnName("CL_LegalLastName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClLegalMiddleName)
+                    .IsRequired()
+                    .HasColumnName("CL_Legal_MiddleName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClMigrantStatusOptId)
+                    .HasColumnName("CL_MigrantStatus_OPT_ID")
+                    .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.ClOntId).HasColumnName("CL_ONT_ID");
+
+                entity.Property(e => e.ClOtherFirstName)
+                    .HasColumnName("CL_OtherFirstName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClOtherLastName)
+                    .HasColumnName("CL_OtherLastName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClOtherMiddleName)
+                    .HasColumnName("CL_OtherMiddleName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClParentTeacherConferenceDate1)
+                    .HasColumnName("CL_ParentTeacherConferenceDate1")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.ClParentTeacherConferenceDate2)
+                    .HasColumnName("CL_ParentTeacherConferenceDate2")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.ClPhoneNumber)
+                    .IsRequired()
+                    .HasColumnName("CL_PhoneNumber")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClPostalCode)
+                    .IsRequired()
+                    .HasColumnName("CL_PostalCode")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClReId).HasColumnName("CL_RE_ID");
+
+                entity.Property(e => e.ClRecieveServicesOptId).HasColumnName("CL_RecieveServices_OPT_ID");
+
+                entity.Property(e => e.ClRequiredSpecializedServices).HasColumnName("CL_RequiredSpecializedServices");
+
+                entity.Property(e => e.ClSecondLanguageLangId).HasColumnName("CL_SecondLanguage_LANG_ID");
+
+                entity.Property(e => e.ClSnapOptId).HasColumnName("CL_SNAP_OPT_ID");
+
+                entity.Property(e => e.ClSsiOptId).HasColumnName("CL_SSI_OPT_ID");
+
+                entity.Property(e => e.ClSsid)
+                    .HasColumnName("CL_SSID")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.ClStId).HasColumnName("CL_ST_ID");
+
+                entity.Property(e => e.ClStartDate)
+                    .HasColumnName("CL_StartDate")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.ClTanfOptId).HasColumnName("CL_TANF_OPT_ID");
+
+                entity.Property(e => e.ClThirdLanguageLangId).HasColumnName("CL_ThirdLanguage_LANG_ID");
+
+                entity.Property(e => e.ClWicOptId).HasColumnName("CL_WIC_OPT_ID");
+            });
+
             modelBuilder.Entity<County>(entity =>
             {
                 entity.HasKey(e => e.CoId);
@@ -85,6 +303,28 @@ namespace EarlyLearningHub.Models
                     .IsRequired()
                     .HasColumnName("ER_Type")
                     .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<FileUpload>(entity =>
+            {
+                entity.HasKey(e => e.FiId);
+
+                entity.Property(e => e.FiId).HasColumnName("FI_ID");
+
+                entity.Property(e => e.FiContentType)
+                    .IsRequired()
+                    .HasColumnName("FI_ContentType")
+                    .HasMaxLength(200);
+
+                entity.Property(e => e.FiData)
+                    .IsRequired()
+                    .HasColumnName("FI_Data");
+
+                entity.Property(e => e.FiName)
+                    .IsRequired()
+                    .HasColumnName("FI_NAME")
+                    .HasMaxLength(50)
                     .IsUnicode(false);
             });
 
@@ -474,6 +714,303 @@ namespace EarlyLearningHub.Models
                     .HasColumnName("ST_Name")
                     .HasMaxLength(100)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<StudentLevel>(entity =>
+            {
+                entity.HasKey(e => e.SlId);
+
+                entity.Property(e => e.SlId)
+                    .HasColumnName("SL_ID")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.SlAddress)
+                    .IsRequired()
+                    .HasColumnName("SL_Address")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlAsqpeformedDate)
+                    .HasColumnName("SL_ASQPeformedDate")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.SlAssignedClassromName)
+                    .HasColumnName("SL_AssignedClassromName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlAverageFromQ1)
+                    .HasColumnName("SL_AverageFromQ1")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlAverageFromQ2)
+                    .HasColumnName("SL_AverageFromQ2")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlAverageFromQ3)
+                    .HasColumnName("SL_AverageFromQ3")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlAverageFromQ4)
+                    .HasColumnName("SL_AverageFromQ4")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlBirthdate)
+                    .HasColumnName("SL_Birthdate")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.SlChildAssessmentPerformDate1)
+                    .HasColumnName("SL_ChildAssessmentPerformDate1")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.SlChildAssessmentPerformDate2)
+                    .HasColumnName("SL_ChildAssessmentPerformDate2")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.SlChildAssessmentPerformDate3)
+                    .HasColumnName("SL_ChildAssessmentPerformDate3")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.SlCity)
+                    .IsRequired()
+                    .HasColumnName("SL_City")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlCoId).HasColumnName("SL_CO_ID");
+
+                entity.Property(e => e.SlEmail)
+                    .IsRequired()
+                    .HasColumnName("SL_Email")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlEndDate)
+                    .HasColumnName("SL_EndDate")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.SlErId).HasColumnName("SL_ER_ID");
+
+                entity.Property(e => e.SlFirstLanguageLangId).HasColumnName("SL_FirstLanguage_LANG_ID");
+
+                entity.Property(e => e.SlFosterCareOptId).HasColumnName("SL_FosterCare_OPT_ID");
+
+                entity.Property(e => e.SlFreeReducedLunchProgramOptId).HasColumnName("SL_FreeReducedLunchProgram_OPT_ID");
+
+                entity.Property(e => e.SlGeId).HasColumnName("SL_GE_ID");
+
+                entity.Property(e => e.SlGenerationCode)
+                    .HasColumnName("SL_GenerationCode")
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlHomelessStatusOptId).HasColumnName("SL_HomelessStatus_OPT_ID");
+
+                entity.Property(e => e.SlIfspOptId).HasColumnName("SL_IFSP_OPT_ID");
+
+                entity.Property(e => e.SlIncId).HasColumnName("SL_INC_ID");
+
+                entity.Property(e => e.SlLegalFirstName)
+                    .IsRequired()
+                    .HasColumnName("SL_LegalFirstName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlLegalLastName)
+                    .IsRequired()
+                    .HasColumnName("SL_LegalLastName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlLegalMiddleName)
+                    .HasColumnName("SL_Legal_MiddleName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlMigrantStatusOptId)
+                    .HasColumnName("SL_MigrantStatus_OPT_ID")
+                    .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.SlOntId).HasColumnName("SL_ONT_ID");
+
+                entity.Property(e => e.SlOtherFirstName)
+                    .HasColumnName("SL_OtherFirstName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlOtherLastName)
+                    .HasColumnName("SL_OtherLastName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlOtherMiddleName)
+                    .HasColumnName("SL_OtherMiddleName")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlParentTeacherConferenceDate1)
+                    .HasColumnName("SL_ParentTeacherConferenceDate1")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.SlParentTeacherConferenceDate2)
+                    .HasColumnName("SL_ParentTeacherConferenceDate2")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.SlPhoneNumber)
+                    .IsRequired()
+                    .HasColumnName("SL_PhoneNumber")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlPostalCode)
+                    .IsRequired()
+                    .HasColumnName("SL_PostalCode")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlPrvdId).HasColumnName("SL_PRVD_ID");
+
+                entity.Property(e => e.SlReId).HasColumnName("SL_RE_ID");
+
+                entity.Property(e => e.SlRecieveServicesOptId).HasColumnName("SL_RecieveServices_OPT_ID");
+
+                entity.Property(e => e.SlRequiredSpecializedServices).HasColumnName("SL_RequiredSpecializedServices");
+
+                entity.Property(e => e.SlSecondLanguageLangId).HasColumnName("SL_SecondLanguage_LANG_ID");
+
+                entity.Property(e => e.SlSnapOptId).HasColumnName("SL_SNAP_OPT_ID");
+
+                entity.Property(e => e.SlSsiOptId).HasColumnName("SL_SSI_OPT_ID");
+
+                entity.Property(e => e.SlSsid)
+                    .HasColumnName("SL_SSID")
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SlStId).HasColumnName("SL_ST_ID");
+
+                entity.Property(e => e.SlStartDate)
+                    .HasColumnName("SL_StartDate")
+                    .HasColumnType("datetime");
+
+                entity.Property(e => e.SlTanfOptId).HasColumnName("SL_TANF_OPT_ID");
+
+                entity.Property(e => e.SlThirdLanguageLangId).HasColumnName("SL_ThirdLanguage_LANG_ID");
+
+                entity.Property(e => e.SlWicOptId).HasColumnName("SL_WIC_OPT_ID");
+
+                entity.HasOne(d => d.SlCo)
+                    .WithMany(p => p.StudentLevel)
+                    .HasForeignKey(d => d.SlCoId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_County");
+
+                entity.HasOne(d => d.SlEr)
+                    .WithMany(p => p.StudentLevel)
+                    .HasForeignKey(d => d.SlErId)
+                    .HasConstraintName("FK_StudentLevel_ExitReason");
+
+                entity.HasOne(d => d.SlFirstLanguageLang)
+                    .WithMany(p => p.StudentLevelSlFirstLanguageLang)
+                    .HasForeignKey(d => d.SlFirstLanguageLangId)
+                    .HasConstraintName("FK_StudentLevel_Language");
+
+                entity.HasOne(d => d.SlFosterCareOpt)
+                    .WithMany(p => p.StudentLevelSlFosterCareOpt)
+                    .HasForeignKey(d => d.SlFosterCareOptId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Option");
+
+                entity.HasOne(d => d.SlFreeReducedLunchProgramOpt)
+                    .WithMany(p => p.StudentLevelSlFreeReducedLunchProgramOpt)
+                    .HasForeignKey(d => d.SlFreeReducedLunchProgramOptId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Option4");
+
+                entity.HasOne(d => d.SlHomelessStatusOpt)
+                    .WithMany(p => p.StudentLevelSlHomelessStatusOpt)
+                    .HasForeignKey(d => d.SlHomelessStatusOptId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Option6");
+
+                entity.HasOne(d => d.SlIfspOpt)
+                    .WithMany(p => p.StudentLevelSlIfspOpt)
+                    .HasForeignKey(d => d.SlIfspOptId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Option8");
+
+                entity.HasOne(d => d.SlInc)
+                    .WithMany(p => p.StudentLevel)
+                    .HasForeignKey(d => d.SlIncId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Income");
+
+                entity.HasOne(d => d.SlMigrantStatusOpt)
+                    .WithMany(p => p.StudentLevelSlMigrantStatusOpt)
+                    .HasForeignKey(d => d.SlMigrantStatusOptId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Option7");
+
+                entity.HasOne(d => d.SlOnt)
+                    .WithMany(p => p.StudentLevel)
+                    .HasForeignKey(d => d.SlOntId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_OtherNameType");
+
+                entity.HasOne(d => d.SlPrvd)
+                    .WithMany(p => p.StudentLevel)
+                    .HasForeignKey(d => d.SlPrvdId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Provider");
+
+                entity.HasOne(d => d.SlRe)
+                    .WithMany(p => p.StudentLevel)
+                    .HasForeignKey(d => d.SlReId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_RaceEthnicity");
+
+                entity.HasOne(d => d.SlRecieveServicesOpt)
+                    .WithMany(p => p.StudentLevelSlRecieveServicesOpt)
+                    .HasForeignKey(d => d.SlRecieveServicesOptId)
+                    .HasConstraintName("FK_StudentLevel_Option9");
+
+                entity.HasOne(d => d.SlSecondLanguageLang)
+                    .WithMany(p => p.StudentLevelSlSecondLanguageLang)
+                    .HasForeignKey(d => d.SlSecondLanguageLangId)
+                    .HasConstraintName("FK_StudentLevel_Language1");
+
+                entity.HasOne(d => d.SlSnapOpt)
+                    .WithMany(p => p.StudentLevelSlSnapOpt)
+                    .HasForeignKey(d => d.SlSnapOptId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Option1");
+
+                entity.HasOne(d => d.SlSsiOpt)
+                    .WithMany(p => p.StudentLevelSlSsiOpt)
+                    .HasForeignKey(d => d.SlSsiOptId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Option5");
+
+                entity.HasOne(d => d.SlTanfOpt)
+                    .WithMany(p => p.StudentLevelSlTanfOpt)
+                    .HasForeignKey(d => d.SlTanfOptId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Option3");
+
+                entity.HasOne(d => d.SlThirdLanguageLang)
+                    .WithMany(p => p.StudentLevelSlThirdLanguageLang)
+                    .HasForeignKey(d => d.SlThirdLanguageLangId)
+                    .HasConstraintName("FK_StudentLevel_Language2");
+
+                entity.HasOne(d => d.SlWicOpt)
+                    .WithMany(p => p.StudentLevelSlWicOpt)
+                    .HasForeignKey(d => d.SlWicOptId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Option2");
             });
         }
     }

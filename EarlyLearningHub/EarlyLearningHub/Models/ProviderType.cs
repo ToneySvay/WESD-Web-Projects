@@ -14,6 +14,7 @@ namespace EarlyLearningHub.Models
         }
 
         public int PtId { get; set; }
+
         [Required]
         [StringLength(100, ErrorMessage = "Provider Type cannot be longer than 100 characters.")]
         [Column("PT_Name")]

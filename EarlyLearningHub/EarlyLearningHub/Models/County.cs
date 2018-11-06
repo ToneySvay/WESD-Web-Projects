@@ -7,11 +7,18 @@ namespace EarlyLearningHub.Models
 {
     public partial class County
     {
+        public County()
+        {
+            StudentLevel = new HashSet<StudentLevel>();
+        }
+
         public int CoId { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "County name cannot be longer than 100 characters.")]
         [Column("CO_Name")]
         [Display(Name = "County")]
         public string CoName { get; set; }
+
+        public ICollection<StudentLevel> StudentLevel { get; set; }
     }
 }
