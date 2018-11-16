@@ -781,6 +781,22 @@ namespace EarlyLearningHub.Models
 
                 entity.Property(e => e.SlCoId).HasColumnName("SL_CO_ID");
 
+                entity.Property(e => e.SlDaysAttendedQ1).HasColumnName("SL_DaysAttendedQ1");
+
+                entity.Property(e => e.SlDaysAttendedQ2).HasColumnName("SL_DaysAttendedQ2");
+
+                entity.Property(e => e.SlDaysAttendedQ3).HasColumnName("SL_DaysAttendedQ3");
+
+                entity.Property(e => e.SlDaysAttendedQ4).HasColumnName("SL_DaysAttendedQ4");
+
+                entity.Property(e => e.SlDaysEnrolledQ1).HasColumnName("SL_DaysEnrolledQ1");
+
+                entity.Property(e => e.SlDaysEnrolledQ2).HasColumnName("SL_DaysEnrolledQ2");
+
+                entity.Property(e => e.SlDaysEnrolledQ3).HasColumnName("SL_DaysEnrolledQ3");
+
+                entity.Property(e => e.SlDaysEnrolledQ4).HasColumnName("SL_DaysEnrolledQ4");
+
                 entity.Property(e => e.SlEmail)
                     .IsRequired()
                     .HasColumnName("SL_Email")
@@ -874,7 +890,7 @@ namespace EarlyLearningHub.Models
 
                 entity.Property(e => e.SlRecieveServicesOptId).HasColumnName("SL_RecieveServices_OPT_ID");
 
-                entity.Property(e => e.SlRequiredSpecializedServices).HasColumnName("SL_RequiredSpecializedServices");
+                entity.Property(e => e.SlRequiredSpecializedServicesOptId).HasColumnName("SL_RequiredSpecializedServices_OPT_ID");
 
                 entity.Property(e => e.SlSecondLanguageLangId).HasColumnName("SL_SecondLanguage_LANG_ID");
 
@@ -926,6 +942,12 @@ namespace EarlyLearningHub.Models
                     .HasForeignKey(d => d.SlFreeReducedLunchProgramOptId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_StudentLevel_Option4");
+
+                entity.HasOne(d => d.SlGe)
+                    .WithMany(p => p.StudentLevel)
+                    .HasForeignKey(d => d.SlGeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_StudentLevel_Gender");
 
                 entity.HasOne(d => d.SlHomelessStatusOpt)
                     .WithMany(p => p.StudentLevelSlHomelessStatusOpt)

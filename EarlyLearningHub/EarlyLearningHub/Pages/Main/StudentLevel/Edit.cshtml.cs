@@ -35,6 +35,7 @@ namespace EarlyLearningHub.Pages.Main.StudentLevel
                 .Include(s => s.SlFirstLanguageLang)
                 .Include(s => s.SlFosterCareOpt)
                 .Include(s => s.SlFreeReducedLunchProgramOpt)
+                .Include(s => s.SlGe)
                 .Include(s => s.SlHomelessStatusOpt)
                 .Include(s => s.SlIfspOpt)
                 .Include(s => s.SlInc)
@@ -59,6 +60,7 @@ namespace EarlyLearningHub.Pages.Main.StudentLevel
            ViewData["SlFirstLanguageLangId"] = new SelectList(_context.Language, "LangId", "LangName");
            ViewData["SlFosterCareOptId"] = new SelectList(_context.Option, "OptId", "OptValue");
            ViewData["SlFreeReducedLunchProgramOptId"] = new SelectList(_context.Option, "OptId", "OptValue");
+           ViewData["SlGeId"] = new SelectList(_context.Gender, "GeId", "GeAbbreviation");
            ViewData["SlHomelessStatusOptId"] = new SelectList(_context.Option, "OptId", "OptValue");
            ViewData["SlIfspOptId"] = new SelectList(_context.Option, "OptId", "OptValue");
            ViewData["SlIncId"] = new SelectList(_context.Income, "IncId", "IncRange");

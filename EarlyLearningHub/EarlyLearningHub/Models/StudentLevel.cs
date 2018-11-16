@@ -110,7 +110,7 @@ namespace EarlyLearningHub.Models
         public int SlIfspOptId { get; set; }
 
         [Display(Name = "Required Specialized Services ")]
-        public int? SlRequiredSpecializedServices { get; set; }
+        public int SlRequiredSpecializedServicesOptId { get; set; }
 
         [Display(Name = "Start Date ")]
         public DateTime? SlStartDate { get; set; }
@@ -124,14 +124,26 @@ namespace EarlyLearningHub.Models
         [Display(Name = "Assigned Classrooom (Name)")]
         public string SlAssignedClassromName { get; set; }
 
+        public int? SlDaysEnrolledQ1 { get; set; }
+        public int? SlDaysAttendedQ1 { get; set; }
+
         [Display(Name = "Average from Quarter 1")]
         public string SlAverageFromQ1 { get; set; }
+
+        public int? SlDaysEnrolledQ2 { get; set; }
+        public int? SlDaysAttendedQ2 { get; set; }
 
         [Display(Name = "Average from Quarter 2")]
         public string SlAverageFromQ2 { get; set; }
 
+        public int? SlDaysEnrolledQ3 { get; set; }
+        public int? SlDaysAttendedQ3 { get; set; }
+
         [Display(Name = "Average from Quarter 3")]
         public string SlAverageFromQ3 { get; set; }
+
+        public int? SlDaysEnrolledQ4 { get; set; }
+        public int? SlDaysAttendedQ4 { get; set; }
 
         [Display(Name = "Average from Quarter 4")]
         public string SlAverageFromQ4 { get; set; }
@@ -162,6 +174,7 @@ namespace EarlyLearningHub.Models
         public Language SlFirstLanguageLang { get; set; }
         public Option SlFosterCareOpt { get; set; }
         public Option SlFreeReducedLunchProgramOpt { get; set; }
+        public Gender SlGe { get; set; }
         public Option SlHomelessStatusOpt { get; set; }
         public Option SlIfspOpt { get; set; }
         public Income SlInc { get; set; }

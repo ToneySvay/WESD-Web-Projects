@@ -25,6 +25,7 @@ namespace EarlyLearningHub.Pages.Main.StudentLevel
         ViewData["SlFirstLanguageLangId"] = new SelectList(_context.Language, "LangId", "LangName");
         ViewData["SlFosterCareOptId"] = new SelectList(_context.Option, "OptId", "OptValue");
         ViewData["SlFreeReducedLunchProgramOptId"] = new SelectList(_context.Option, "OptId", "OptValue");
+        ViewData["SlGeId"] = new SelectList(_context.Gender, "GeId", "GeName");
         ViewData["SlHomelessStatusOptId"] = new SelectList(_context.Option, "OptId", "OptValue");
         ViewData["SlIfspOptId"] = new SelectList(_context.Option, "OptId", "OptValue");
         ViewData["SlIncId"] = new SelectList(_context.Income, "IncId", "IncRange");

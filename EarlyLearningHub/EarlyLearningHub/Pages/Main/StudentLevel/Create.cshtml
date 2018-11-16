@@ -68,8 +68,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="StudentLevel.SlGeId" class="control-label"></label>
-                <input asp-for="StudentLevel.SlGeId" class="form-control" />
-                <span asp-validation-for="StudentLevel.SlGeId" class="text-danger"></span>
+                <select asp-for="StudentLevel.SlGeId" class ="form-control" asp-items="ViewBag.SlGeId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="StudentLevel.SlAddress" class="control-label"></label>
@@ -162,9 +161,9 @@
                 <select asp-for="StudentLevel.SlIfspOptId" class ="form-control" asp-items="ViewBag.SlIfspOptId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="StudentLevel.SlRequiredSpecializedServices" class="control-label"></label>
-                <input asp-for="StudentLevel.SlRequiredSpecializedServices" class="form-control" />
-                <span asp-validation-for="StudentLevel.SlRequiredSpecializedServices" class="text-danger"></span>
+                <label asp-for="StudentLevel.SlRequiredSpecializedServicesOptId" class="control-label"></label>
+                <input asp-for="StudentLevel.SlRequiredSpecializedServicesOptId" class="form-control" />
+                <span asp-validation-for="StudentLevel.SlRequiredSpecializedServicesOptId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="StudentLevel.SlStartDate" class="control-label"></label>
@@ -186,9 +185,29 @@
                 <span asp-validation-for="StudentLevel.SlAssignedClassromName" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="StudentLevel.SlDaysEnrolledQ1" class="control-label"></label>
+                <input asp-for="StudentLevel.SlDaysEnrolledQ1" class="form-control" />
+                <span asp-validation-for="StudentLevel.SlDaysEnrolledQ1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentLevel.SlDaysAttendedQ1" class="control-label"></label>
+                <input asp-for="StudentLevel.SlDaysAttendedQ1" class="form-control" />
+                <span asp-validation-for="StudentLevel.SlDaysAttendedQ1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="StudentLevel.SlAverageFromQ1" class="control-label"></label>
                 <input asp-for="StudentLevel.SlAverageFromQ1" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlAverageFromQ1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentLevel.SlDaysEnrolledQ2" class="control-label"></label>
+                <input asp-for="StudentLevel.SlDaysEnrolledQ2" class="form-control" />
+                <span asp-validation-for="StudentLevel.SlDaysEnrolledQ2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentLevel.SlDaysAttendedQ2" class="control-label"></label>
+                <input asp-for="StudentLevel.SlDaysAttendedQ2" class="form-control" />
+                <span asp-validation-for="StudentLevel.SlDaysAttendedQ2" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="StudentLevel.SlAverageFromQ2" class="control-label"></label>
@@ -196,9 +215,29 @@
                 <span asp-validation-for="StudentLevel.SlAverageFromQ2" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="StudentLevel.SlDaysEnrolledQ3" class="control-label"></label>
+                <input asp-for="StudentLevel.SlDaysEnrolledQ3" class="form-control" />
+                <span asp-validation-for="StudentLevel.SlDaysEnrolledQ3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentLevel.SlDaysAttendedQ3" class="control-label"></label>
+                <input asp-for="StudentLevel.SlDaysAttendedQ3" class="form-control" />
+                <span asp-validation-for="StudentLevel.SlDaysAttendedQ3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="StudentLevel.SlAverageFromQ3" class="control-label"></label>
                 <input asp-for="StudentLevel.SlAverageFromQ3" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlAverageFromQ3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentLevel.SlDaysEnrolledQ4" class="control-label"></label>
+                <input asp-for="StudentLevel.SlDaysEnrolledQ4" class="form-control" />
+                <span asp-validation-for="StudentLevel.SlDaysEnrolledQ4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentLevel.SlDaysAttendedQ4" class="control-label"></label>
+                <input asp-for="StudentLevel.SlDaysAttendedQ4" class="form-control" />
+                <span asp-validation-for="StudentLevel.SlDaysAttendedQ4" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="StudentLevel.SlAverageFromQ4" class="control-label"></label>

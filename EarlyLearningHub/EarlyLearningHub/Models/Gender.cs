@@ -7,7 +7,13 @@ namespace EarlyLearningHub.Models
 {
     public partial class Gender
     {
+        public Gender()
+        {
+            StudentLevel = new HashSet<StudentLevel>();
+        }
+
         public int GeId { get; set; }
+
         [Required]
         [StringLength(50, ErrorMessage = "Gender cannot be longer than 50 characters.")]
         [Column("GE_Name")]
@@ -18,5 +24,7 @@ namespace EarlyLearningHub.Models
         [Column("GE_Abbreviation")]
         [Display(Name = "Gender Code")]
         public string GeAbbreviation { get; set; }
+
+        public ICollection<StudentLevel> StudentLevel { get; set; }
     }
 }

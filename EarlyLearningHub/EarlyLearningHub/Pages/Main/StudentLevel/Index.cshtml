@@ -41,9 +41,6 @@
                 @Html.DisplayNameFor(model => model.StudentLevel[0].SlBirthdate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StudentLevel[0].SlGeId)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.StudentLevel[0].SlAddress)
             </th>
             <th>
@@ -62,7 +59,7 @@
                 @Html.DisplayNameFor(model => model.StudentLevel[0].SlPhoneNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StudentLevel[0].SlRequiredSpecializedServices)
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlRequiredSpecializedServicesOptId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.StudentLevel[0].SlStartDate)
@@ -74,13 +71,37 @@
                 @Html.DisplayNameFor(model => model.StudentLevel[0].SlAssignedClassromName)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlDaysEnrolledQ1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlDaysAttendedQ1)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.StudentLevel[0].SlAverageFromQ1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlDaysEnrolledQ2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlDaysAttendedQ2)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.StudentLevel[0].SlAverageFromQ2)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlDaysEnrolledQ3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlDaysAttendedQ3)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.StudentLevel[0].SlAverageFromQ3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlDaysEnrolledQ4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlDaysAttendedQ4)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.StudentLevel[0].SlAverageFromQ4)
@@ -117,6 +138,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.StudentLevel[0].SlFreeReducedLunchProgramOpt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentLevel[0].SlGe)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.StudentLevel[0].SlHomelessStatusOpt)
@@ -194,9 +218,6 @@
                 @Html.DisplayFor(modelItem => item.SlBirthdate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SlGeId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.SlAddress)
             </td>
             <td>
@@ -215,7 +236,7 @@
                 @Html.DisplayFor(modelItem => item.SlPhoneNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SlRequiredSpecializedServices)
+                @Html.DisplayFor(modelItem => item.SlRequiredSpecializedServicesOptId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SlStartDate)
@@ -227,13 +248,37 @@
                 @Html.DisplayFor(modelItem => item.SlAssignedClassromName)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.SlDaysEnrolledQ1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlDaysAttendedQ1)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.SlAverageFromQ1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlDaysEnrolledQ2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlDaysAttendedQ2)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SlAverageFromQ2)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.SlDaysEnrolledQ3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlDaysAttendedQ3)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.SlAverageFromQ3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlDaysEnrolledQ4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlDaysAttendedQ4)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SlAverageFromQ4)
@@ -270,6 +315,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SlFreeReducedLunchProgramOpt.OptValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SlGe.GeAbbreviation)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SlHomelessStatusOpt.OptValue)

@@ -34,6 +34,7 @@ namespace EarlyLearningHub.Pages.Main.StudentLevel
                 .Include(s => s.SlFirstLanguageLang)
                 .Include(s => s.SlFosterCareOpt)
                 .Include(s => s.SlFreeReducedLunchProgramOpt)
+                .Include(s => s.SlGe)
                 .Include(s => s.SlHomelessStatusOpt)
                 .Include(s => s.SlIfspOpt)
                 .Include(s => s.SlInc)
