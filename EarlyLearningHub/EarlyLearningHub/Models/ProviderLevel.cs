@@ -33,7 +33,7 @@ namespace EarlyLearningHub.Models
         public int PlLicencedOfficeChildCareOptId { get; set; }
 
         [Required]
-        [Display(Name = "Total number of classrooms serving Preschool Promise children")]
+        [Display(Name = "Total # of classrooms serving Preschool Promise children")]
         public int PlNumClassroomServingPpc { get; set; }
 
 
@@ -62,19 +62,19 @@ namespace EarlyLearningHub.Models
         public TimeSpan PlDailyEndTime { get; set; }
 
         [Required]
-        [Display(Name = "Number of Days in Program Year ")]
+        [Display(Name = "# of Days in Program Year ")]
         public int PlNumOfDaysInProgramYear { get; set; }
 
         [Required]
-        [Display(Name = "Number of Planned Service Hours ")]
+        [Display(Name = "# of Planned Service Hours ")]
         public int PlPlannedServiceHours { get; set; }
 
         [Required]
-        [Display(Name = "Number of Actual Service Hours provided YTD ")]
+        [Display(Name = "# of Actual Service Hours provided YTD ")]
         public int PlNumOfActualServiceHrsYtd { get; set; }
 
         [Required]
-        [Display(Name = "Number of children on waitlist/Interest List ")]
+        [Display(Name = "# of children on waitlist/Interest List ")]
         public int PlNumChildrenOnWaitlist { get; set; }
 
         [Required]

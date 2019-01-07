@@ -5,285 +5,320 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
 
-<h4>StudentLevel</h4>
+<link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+
+@*<h2>Create</h2>*@
+
+<h2>Child Level</h2>
+
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="StudentLevel.SlPrvdId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlPrvdId" class ="form-control" asp-items="ViewBag.SlPrvdId"></select>
+
+@*<div class="container">
+        <div class="row">
+            <div class="col-sm">
+                One of three columns
             </div>
-            <div class="form-group">
+            <div class="col-sm">
+                One of three columns
+            </div>
+            <div class="col-sm">
+                One of three columns
+            </div>
+        </div>
+    </div>*@
+
+<div class="container">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <label asp-for="StudentLevel.SlPrvdId" class="control-label"></label>
+                <select asp-for="StudentLevel.SlPrvdId" class="form-control" asp-items="ViewBag.SlPrvdId"></select>
+            </div>
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlLegalFirstName" class="control-label"></label>
                 <input asp-for="StudentLevel.SlLegalFirstName" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlLegalFirstName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlLegalLastName" class="control-label"></label>
                 <input asp-for="StudentLevel.SlLegalLastName" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlLegalLastName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlLegalMiddleName" class="control-label"></label>
                 <input asp-for="StudentLevel.SlLegalMiddleName" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlLegalMiddleName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlGenerationCode" class="control-label"></label>
                 <input asp-for="StudentLevel.SlGenerationCode" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlGenerationCode" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlOntId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlOntId" class ="form-control" asp-items="ViewBag.SlOntId"></select>
+                <select asp-for="StudentLevel.SlOntId" class="form-control" asp-items="ViewBag.SlOntId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlOtherLastName" class="control-label"></label>
                 <input asp-for="StudentLevel.SlOtherLastName" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlOtherLastName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlOtherFirstName" class="control-label"></label>
                 <input asp-for="StudentLevel.SlOtherFirstName" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlOtherFirstName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlOtherMiddleName" class="control-label"></label>
                 <input asp-for="StudentLevel.SlOtherMiddleName" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlOtherMiddleName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlSsid" class="control-label"></label>
                 <input asp-for="StudentLevel.SlSsid" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlSsid" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlBirthdate" class="control-label"></label>
                 <input asp-for="StudentLevel.SlBirthdate" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlBirthdate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlGeId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlGeId" class ="form-control" asp-items="ViewBag.SlGeId"></select>
+                <select asp-for="StudentLevel.SlGeId" class="form-control" asp-items="ViewBag.SlGeId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlAddress" class="control-label"></label>
                 <input asp-for="StudentLevel.SlAddress" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlAddress" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlCity" class="control-label"></label>
                 <input asp-for="StudentLevel.SlCity" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlCity" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlStId" class="control-label"></label>
                 <input asp-for="StudentLevel.SlStId" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlStId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlPostalCode" class="control-label"></label>
                 <input asp-for="StudentLevel.SlPostalCode" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlPostalCode" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlCoId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlCoId" class ="form-control" asp-items="ViewBag.SlCoId"></select>
+                <select asp-for="StudentLevel.SlCoId" class="form-control" asp-items="ViewBag.SlCoId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlEmail" class="control-label"></label>
                 <input asp-for="StudentLevel.SlEmail" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlEmail" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlPhoneNumber" class="control-label"></label>
                 <input asp-for="StudentLevel.SlPhoneNumber" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlPhoneNumber" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlReId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlReId" class ="form-control" asp-items="ViewBag.SlReId"></select>
+                <select asp-for="StudentLevel.SlReId" class="form-control" asp-items="ViewBag.SlReId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlFirstLanguageLangId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlFirstLanguageLangId" class ="form-control" asp-items="ViewBag.SlFirstLanguageLangId"></select>
+                <select asp-for="StudentLevel.SlFirstLanguageLangId" class="form-control" asp-items="ViewBag.SlFirstLanguageLangId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlSecondLanguageLangId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlSecondLanguageLangId" class ="form-control" asp-items="ViewBag.SlSecondLanguageLangId"></select>
+                <select asp-for="StudentLevel.SlSecondLanguageLangId" class="form-control" asp-items="ViewBag.SlSecondLanguageLangId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlThirdLanguageLangId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlThirdLanguageLangId" class ="form-control" asp-items="ViewBag.SlThirdLanguageLangId"></select>
+                <select asp-for="StudentLevel.SlThirdLanguageLangId" class="form-control" asp-items="ViewBag.SlThirdLanguageLangId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlIncId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlIncId" class ="form-control" asp-items="ViewBag.SlIncId"></select>
+                <select asp-for="StudentLevel.SlIncId" class="form-control" asp-items="ViewBag.SlIncId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlFosterCareOptId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlFosterCareOptId" class ="form-control" asp-items="ViewBag.SlFosterCareOptId"></select>
+                <select asp-for="StudentLevel.SlFosterCareOptId" class="form-control" asp-items="ViewBag.SlFosterCareOptId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlSnapOptId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlSnapOptId" class ="form-control" asp-items="ViewBag.SlSnapOptId"></select>
+                <select asp-for="StudentLevel.SlSnapOptId" class="form-control" asp-items="ViewBag.SlSnapOptId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlWicOptId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlWicOptId" class ="form-control" asp-items="ViewBag.SlWicOptId"></select>
+                <select asp-for="StudentLevel.SlWicOptId" class="form-control" asp-items="ViewBag.SlWicOptId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlTanfOptId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlTanfOptId" class ="form-control" asp-items="ViewBag.SlTanfOptId"></select>
+                <select asp-for="StudentLevel.SlTanfOptId" class="form-control" asp-items="ViewBag.SlTanfOptId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlFreeReducedLunchProgramOptId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlFreeReducedLunchProgramOptId" class ="form-control" asp-items="ViewBag.SlFreeReducedLunchProgramOptId"></select>
+                <select asp-for="StudentLevel.SlFreeReducedLunchProgramOptId" class="form-control" asp-items="ViewBag.SlFreeReducedLunchProgramOptId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlSsiOptId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlSsiOptId" class ="form-control" asp-items="ViewBag.SlSsiOptId"></select>
+                <select asp-for="StudentLevel.SlSsiOptId" class="form-control" asp-items="ViewBag.SlSsiOptId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlHomelessStatusOptId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlHomelessStatusOptId" class ="form-control" asp-items="ViewBag.SlHomelessStatusOptId"></select>
+                <select asp-for="StudentLevel.SlHomelessStatusOptId" class="form-control" asp-items="ViewBag.SlHomelessStatusOptId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlMigrantStatusOptId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlMigrantStatusOptId" class ="form-control" asp-items="ViewBag.SlMigrantStatusOptId"></select>
+                <select asp-for="StudentLevel.SlMigrantStatusOptId" class="form-control" asp-items="ViewBag.SlMigrantStatusOptId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlIfspOptId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlIfspOptId" class ="form-control" asp-items="ViewBag.SlIfspOptId"></select>
+                <select asp-for="StudentLevel.SlIfspOptId" class="form-control" asp-items="ViewBag.SlIfspOptId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlRequiredSpecializedServicesOptId" class="control-label"></label>
                 <input asp-for="StudentLevel.SlRequiredSpecializedServicesOptId" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlRequiredSpecializedServicesOptId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlStartDate" class="control-label"></label>
                 <input asp-for="StudentLevel.SlStartDate" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlStartDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlEndDate" class="control-label"></label>
                 <input asp-for="StudentLevel.SlEndDate" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlEndDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlErId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlErId" class ="form-control" asp-items="ViewBag.SlErId"></select>
+                <select asp-for="StudentLevel.SlErId" class="form-control" asp-items="ViewBag.SlErId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlAssignedClassromName" class="control-label"></label>
                 <input asp-for="StudentLevel.SlAssignedClassromName" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlAssignedClassromName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlDaysEnrolledQ1" class="control-label"></label>
                 <input asp-for="StudentLevel.SlDaysEnrolledQ1" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlDaysEnrolledQ1" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlDaysAttendedQ1" class="control-label"></label>
                 <input asp-for="StudentLevel.SlDaysAttendedQ1" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlDaysAttendedQ1" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlAverageFromQ1" class="control-label"></label>
                 <input asp-for="StudentLevel.SlAverageFromQ1" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlAverageFromQ1" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlDaysEnrolledQ2" class="control-label"></label>
                 <input asp-for="StudentLevel.SlDaysEnrolledQ2" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlDaysEnrolledQ2" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlDaysAttendedQ2" class="control-label"></label>
                 <input asp-for="StudentLevel.SlDaysAttendedQ2" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlDaysAttendedQ2" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlAverageFromQ2" class="control-label"></label>
                 <input asp-for="StudentLevel.SlAverageFromQ2" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlAverageFromQ2" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlDaysEnrolledQ3" class="control-label"></label>
                 <input asp-for="StudentLevel.SlDaysEnrolledQ3" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlDaysEnrolledQ3" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlDaysAttendedQ3" class="control-label"></label>
                 <input asp-for="StudentLevel.SlDaysAttendedQ3" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlDaysAttendedQ3" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlAverageFromQ3" class="control-label"></label>
                 <input asp-for="StudentLevel.SlAverageFromQ3" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlAverageFromQ3" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlDaysEnrolledQ4" class="control-label"></label>
                 <input asp-for="StudentLevel.SlDaysEnrolledQ4" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlDaysEnrolledQ4" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlDaysAttendedQ4" class="control-label"></label>
                 <input asp-for="StudentLevel.SlDaysAttendedQ4" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlDaysAttendedQ4" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlAverageFromQ4" class="control-label"></label>
                 <input asp-for="StudentLevel.SlAverageFromQ4" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlAverageFromQ4" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlRecieveServicesOptId" class="control-label"></label>
-                <select asp-for="StudentLevel.SlRecieveServicesOptId" class ="form-control" asp-items="ViewBag.SlRecieveServicesOptId"></select>
+                <select asp-for="StudentLevel.SlRecieveServicesOptId" class="form-control" asp-items="ViewBag.SlRecieveServicesOptId"></select>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlChildAssessmentPerformDate1" class="control-label"></label>
                 <input asp-for="StudentLevel.SlChildAssessmentPerformDate1" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlChildAssessmentPerformDate1" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlChildAssessmentPerformDate2" class="control-label"></label>
                 <input asp-for="StudentLevel.SlChildAssessmentPerformDate2" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlChildAssessmentPerformDate2" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlChildAssessmentPerformDate3" class="control-label"></label>
                 <input asp-for="StudentLevel.SlChildAssessmentPerformDate3" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlChildAssessmentPerformDate3" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlAsqpeformedDate" class="control-label"></label>
                 <input asp-for="StudentLevel.SlAsqpeformedDate" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlAsqpeformedDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlParentTeacherConferenceDate1" class="control-label"></label>
                 <input asp-for="StudentLevel.SlParentTeacherConferenceDate1" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlParentTeacherConferenceDate1" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-4">
                 <label asp-for="StudentLevel.SlParentTeacherConferenceDate2" class="control-label"></label>
                 <input asp-for="StudentLevel.SlParentTeacherConferenceDate2" class="form-control" />
                 <span asp-validation-for="StudentLevel.SlParentTeacherConferenceDate2" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
+        </div>
+    
+    <br/>
+
+    <div class="row">
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
     </div>
+    
+        </form>
+
+
+
+
+
+
 </div>
+
+
+
+
 
 <div>
     <a asp-page="Index">Back to List</a>
